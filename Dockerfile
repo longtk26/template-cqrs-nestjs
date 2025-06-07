@@ -1,1 +1,0 @@
-FROM nodejs:18-alpine as base
