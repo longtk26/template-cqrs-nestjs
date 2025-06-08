@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { CreateUserHttpController } from './commands/create-user/create-user.http.controller';
-import { CreateUserHandler } from './commands/create-user/create-user.handler';
+import { CreateUserHttpController } from './application/commands/create-user/create-user.controller';
+import { CreateUserHandler } from './application/commands/create-user/create-user.handler';
 
 @Module({
   controllers: [CreateUserHttpController],
