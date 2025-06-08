@@ -3,7 +3,7 @@ import { CommandBus } from '@nestjs/cqrs';
 import { CreateUserCommand } from './create-user.command';
 
 @Controller('users')
-export class CreateUserHttpController {
+export class CreateUserController {
   constructor(private readonly commandBus: CommandBus) {}
 
   @Post()

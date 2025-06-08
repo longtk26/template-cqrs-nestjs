@@ -7,16 +7,19 @@ import { PrismaService } from '../persistence/prisma/prisma.service';
 @Global()
 @Module({
   imports: [
-    ClsModule.forRoot({
-      plugins: [
-        new ClsPluginTransactional({
-          adapter: new TransactionalAdapterPrisma({
-            prismaInjectionToken: PrismaService,
+    ClsModule.forRootAsync({
+      useFactory: (prismaService: PrismaService) => ({
+        plugins: [
+          new ClsPluginTransactional({
+            adapter: new TransactionalAdapterPrisma({
+              prismaInjectionToken: prismaService,
+            }),
           }),
-        }),
-      ],
-      global: true,
-      middleware: { mount: true },
+        ],
+        global: true,
+        middleware: { mount: true },
+      }),
+      inject: [PrismaService],
     }),
   ],
 })

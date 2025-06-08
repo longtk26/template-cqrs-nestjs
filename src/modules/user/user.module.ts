@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CreateUserHttpController } from './application/commands/create-user/create-user.controller';
+import { CreateUserController } from './application/commands/create-user/create-user.controller';
 import { CreateUserHandler } from './application/commands/create-user/create-user.handler';
 
 @Module({
-  controllers: [CreateUserHttpController],
+  controllers: [CreateUserController],
   providers: [CreateUserHandler],
 })
 export class UserModule {}
