@@ -1,13 +1,8 @@
 import { Command } from '@nestjs/cqrs';
+import { CreateUserRequestDto, CreateUserResponseDto } from './create-user.dto';
 
-export class CreateUserCommand extends Command<{
-  userId: string;
-}> {
-  constructor(
-    public readonly name: string,
-    public readonly email: string,
-    public readonly password: string,
-  ) {
+export class CreateUserCommand extends Command<CreateUserResponseDto> {
+  constructor(public readonly userData: CreateUserRequestDto) {
     super();
   }
 }

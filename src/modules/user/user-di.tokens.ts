@@ -1,0 +1,5 @@
+// Repository
+export const USER_REPOSITORY_READ_TOKEN = Symbol('USER_REPOSITORY_READ_TOKEN');
+export const USER_REPOSITORY_WRITE_TOKEN = Symbol(
+  'USER_REPOSITORY_WRITE_TOKEN',
+);

@@ -1,7 +1,0 @@
-export const REPOSITORY_READ_TOKENS = {
-  USER_READ_REPOSITORY: Symbol('USER_READ_REPOSITORY'),
-} as const;
-
-export const REPOSITORY_WRITE_TOKENS = {
-  USER_WRITE_REPOSITORY: Symbol('USER_WRITE_REPOSITORY'),
-} as const;

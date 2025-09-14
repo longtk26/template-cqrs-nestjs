@@ -1,12 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { ConfigAppService } from './config/config.service';
+import { TAppConfig } from './config/config.types';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly configAppService: ConfigAppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('health')
+  healthCheck() {
+    const appConfig: TAppConfig = this.configAppService.getAppConfig();
+    console.log('App Config:', appConfig.port);
+    return { status: 'ok' };
   }
 }
