@@ -8,7 +8,7 @@ export interface BaseEntityProps {
 }
 
 export interface CreateEntityProps<T> {
-  id: string;
+  id?: string;
   props: T;
   createdAt?: Date;
   updatedAt?: Date;

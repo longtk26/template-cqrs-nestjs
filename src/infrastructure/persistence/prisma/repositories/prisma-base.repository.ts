@@ -34,6 +34,8 @@ abstract class PrismaBaseWriteRepository<T> implements IBaseWriteRepository<T> {
   }
 
   async create<T>(entity: BaseEntity<T>): Promise<BaseEntity<T>> {
+    console.log('model', this.model);
+    console.log('prisma', this.prisma);
     const record: T = await this.prisma.tx[this.model].create({
       data: {
         ...entity.getProps(),

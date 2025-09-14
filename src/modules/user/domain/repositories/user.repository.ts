@@ -3,8 +3,11 @@ import {
   IBaseReadRepository,
   IBaseWriteRepository,
 } from 'src/libs/domain/repositories/base.repository';
+import { UserEntity } from '../entities/user.entity';
 
-export interface IUserReadRepository extends IBaseReadRepository<PrismaUser> {}
+export interface IUserReadRepository extends IBaseReadRepository<PrismaUser> {
+  findByEmail(email: string): Promise<UserEntity | null>;
+}
 
 export interface IUserWriteRepository
   extends IBaseWriteRepository<PrismaUser> {}
